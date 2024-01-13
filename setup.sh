@@ -44,7 +44,7 @@ DIR="$( cd "$( dirname "$0" )" && pwd )"
 case $1 in
     --foxy)    
         case $2 in
-            --nano)
+            --bare)
                 check
                 $DIR/scripts/installros.sh --foxy --bare
                 $DIR/scripts/ros_packages.sh --foxy
@@ -59,7 +59,7 @@ case $1 in
                 source /opt/ros/foxy/setup.bash
             ;;     
             *)
-                printf "Use --nano for installing on Jetson computers or --desktop for installing on a pc for simulation\n\n"
+                printf "Use --bare for installing on Jetson computers or --desktop for installing on a pc for simulation\n\n"
             ;;
         esac
         $DIR/scripts/install_arduino_cli.sh
@@ -76,7 +76,7 @@ case $1 in
     ;;
     --galactic)
         case $2 in
-            --nano)
+            --bare)
                 check
                 $DIR/scripts/installros.sh --galactic --bare
                 $DIR/scripts/ros_packages.sh --galactic
@@ -92,7 +92,7 @@ case $1 in
             
             ;;     
             *)
-                printf "Use --nano for installing on Jetson computers or --desktop for installing on a pc for simulation\n\n"
+                printf "Use --bare for installing on Jetson computers or --desktop for installing on a pc for simulation\n\n"
             ;;
         esac
         $DIR/scripts/install_arduino_cli.sh
@@ -107,10 +107,10 @@ case $1 in
             ;;
         esac
     ;;
-    
+
     *)
         printf "\nThis script is used to install ROS2 and all the required packages for operating the EtherBot
-Use --nano for installing on Jetson computers or --desktop for installing on a pc for simulation\n\n
+Use --bare for installing on Jetson computers or --desktop for installing on a pc for simulation\n\n
 example: $DIR/setup --galactic --desktop\n\n"
     ;;
 
