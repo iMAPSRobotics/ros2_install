@@ -107,6 +107,7 @@ case $1 in
             ;;
         esac
     ;;
+    
     *)
         printf "\nThis script is used to install ROS2 and all the required packages for operating the EtherBot
 Use --nano for installing on Jetson computers or --desktop for installing on a pc for simulation\n\n
